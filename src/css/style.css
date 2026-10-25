@@ -1,0 +1,139 @@
+:root {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #243e30;
+  background: #edf2e9;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 280px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px 20px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(ellipse at top, #fafbf5, #edf2e9 70%);
+}
+
+.game {
+  width: min(100%, 560px);
+  padding: 36px;
+  border: 1px solid #dce4d6;
+  border-radius: 28px;
+  background: #fffef9;
+  box-shadow: 0 18px 60px #294c3010;
+}
+
+.game__header {
+  margin-bottom: 28px;
+}
+
+.game__eyebrow {
+  margin: 0 0 12px;
+  color: #758567;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(25px, 5vw, 36px);
+  font-weight: 650;
+  letter-spacing: -1.2px;
+  line-height: 1.2;
+}
+
+.game__description {
+  margin: 14px 0 0;
+  color: #71806d;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #d5dfcc;
+  border-radius: 20px;
+  background: #e3ebdc;
+}
+
+.board__cell {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border: 1px solid #cdd9c3;
+  border-radius: 12px;
+  background: #f4f6ec;
+  box-shadow: inset 0 2px 5px #36512c08;
+}
+
+.board__goblin {
+  display: block;
+  width: 90%;
+  height: 90%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: contain;
+  user-select: none;
+}
+
+.game__footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+  font-size: 12px;
+}
+
+.game__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4d6d3e;
+}
+
+.game__status::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #78a558;
+  content: "";
+}
+
+.game__interval {
+  color: #7b8577;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 24px 12px;
+  }
+
+  .game {
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+
+  .board {
+    gap: 6px;
+    padding: 8px;
+    border-radius: 16px;
+  }
+
+  .board__cell {
+    border-radius: 9px;
+  }
+
+  .game__footer {
+    font-size: 11px;
+  }
+}
